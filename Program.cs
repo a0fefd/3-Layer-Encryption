@@ -17,7 +17,10 @@ namespace _3_Layer_Encryptor
             Console.Write("Text: ");
             string text = Console.ReadLine();
 
-            new Process(text, mode);
+            Console.Write("Key: ");
+            string key = Console.ReadLine();
+
+            new Process(text, mode, key);
 
             Util.Pause();
         }

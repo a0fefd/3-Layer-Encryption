@@ -1,0 +1,8 @@
+D:\nbigi0\My Documents\Visual Studio 2022\repos\3 Layer Encryptor\bin\Release\3 Layer Encryptor.exe.config
+D:\nbigi0\My Documents\Visual Studio 2022\repos\3 Layer Encryptor\bin\Release\3 Layer Encryptor.exe
+D:\nbigi0\My Documents\Visual Studio 2022\repos\3 Layer Encryptor\bin\Release\3 Layer Encryptor.pdb
+D:\nbigi0\My Documents\Visual Studio 2022\repos\3 Layer Encryptor\obj\Release\3 Layer Encryptor.csproj.AssemblyReference.cache
+D:\nbigi0\My Documents\Visual Studio 2022\repos\3 Layer Encryptor\obj\Release\3 Layer Encryptor.csproj.SuggestedBindingRedirects.cache
+D:\nbigi0\My Documents\Visual Studio 2022\repos\3 Layer Encryptor\obj\Release\3 Layer Encryptor.csproj.CoreCompileInputs.cache
+D:\nbigi0\My Documents\Visual Studio 2022\repos\3 Layer Encryptor\obj\Release\3 Layer Encryptor.exe
+D:\nbigi0\My Documents\Visual Studio 2022\repos\3 Layer Encryptor\obj\Release\3 Layer Encryptor.pdb

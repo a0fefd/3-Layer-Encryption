@@ -11,9 +11,10 @@ namespace _3_Layer_Encryptor
     {
         private class Encryption
         {
-            private static string Stage1(string str)
-            {
-                return Util.StringToHex(str);
+            private static string Stage1(string str, string key)
+            { 
+                return Util.XOR(str, key);
+                //return Util.StringToHex(str);
             }
             private static string Stage2(string str)
             {
@@ -23,12 +24,12 @@ namespace _3_Layer_Encryptor
             {
                 return Util.Base64Encode(str);
             }
-            public Encryption(string str)
+            public Encryption(string str, string key)
             {
                 Console.WriteLine(
                     Stage3(
                         Stage2(
-                            Stage1(str)
+                            Stage1(str, key)
                         )
                     )
                 );
@@ -44,30 +45,31 @@ namespace _3_Layer_Encryptor
             {
                 return Util.BinaryToString(str);
             }
-            private static string Stage3(string str)
+            private static string Stage3(string str, string key)
             {
-                return Util.HexToString(str);
+                return Util.XOR(str, key);
+                //return Util.HexToString(str);
             }
-            public Decryption(string str)
+            public Decryption(string str, string key)
             {
                 Console.WriteLine(
                     Stage3(
                         Stage2(
                             Stage1(str)
-                        )
+                        ), key
                     )
                 );
             }
         }
 
-        public Process(string str, string mode)
+        public Process(string str, string mode, string key)
         {
             if (mode.ToLower() == "e")
             {
-                new Encryption(str);
+                new Encryption(str, key);
             } else
             {
-                new Decryption(str);
+                new Decryption(str, key);
             }
             
         }

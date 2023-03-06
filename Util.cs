@@ -3,35 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.XPath;
 
 namespace _3_Layer_Encryptor
 {
     internal class Util
     {
-        private static bool StringContains(string str, string[] strings)
-        {
-            for (int i = 0; i < strings.Length-1; i++)
-            {
-                if (str.Contains(strings[i]))
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
         private static Byte[] ConvertToByteArray(string str, Encoding encoding)
         {
             return encoding.GetBytes(str);
         }
-        public static string Base64Encode(string str)
+        public static string XOR(string str, string key)
+        {
+            int strLen = str.Length;
+            int keyLen = key.Length;
+            char[] output = new char[strLen];
+
+            for (int i = 0; i < strLen; ++i)
+            {
+                output[i] = (char)(str[i] ^ key[i % keyLen]);
+            }
+
+            return new string(output);
+        }
+        public static String Base64Encode(string str)
         {
             return Convert.ToBase64String(
                 Encoding.UTF7.GetBytes(str)
             );
         }
-        public static string Base64Decode(string str)
+        public static String Base64Decode(string str)
         { 
             return Encoding.UTF7.GetString(
                 Convert.FromBase64String(str)
