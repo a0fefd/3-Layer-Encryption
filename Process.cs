@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using System.Security.Permissions;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
+using System.Windows.Forms;
 
 namespace _3_Layer_Encryptor
 {
@@ -11,6 +14,8 @@ namespace _3_Layer_Encryptor
     {
         private class Encryption
         {
+            private string output;
+
             private static string Stage1(string str, string key)
             { 
                 return Util.XOR(str, key);
@@ -24,19 +29,23 @@ namespace _3_Layer_Encryptor
             {
                 return Util.Base64Encode(str);
             }
-            public Encryption(string str, string key)
+            public Encryption(string[] data)
             {
-                Console.WriteLine(
-                    Stage3(
-                        Stage2(
-                            Stage1(str, key)
-                        )
+                this.output = Stage3(
+                    Stage2(
+                        Stage1(data[0], data[1])
                     )
                 );
+            }
+            public string GetOutput()
+            {
+                return output;
             }
         }
         private class Decryption
         {
+            private string output;
+
             private static string Stage1(string str)
             {
                 return Util.Base64Decode(str);
@@ -50,28 +59,45 @@ namespace _3_Layer_Encryptor
                 return Util.XOR(str, key);
                 //return Util.HexToString(str);
             }
-            public Decryption(string str, string key)
+            public Decryption(string[] data)
             {
-                Console.WriteLine(
-                    Stage3(
-                        Stage2(
-                            Stage1(str)
-                        ), key
-                    )
+                this.output = Stage3(
+                    Stage2(
+                        Stage1(data[0])
+                    ), data[1]
                 );
             }
-        }
-
-        public Process(string str, string mode, string key)
-        {
-            if (mode.ToLower() == "e")
+            public string GetOutput()
             {
-                new Encryption(str, key);
+                return output;
+            }
+        }
+        public Process(string str, ConsoleKeyInfo mode, string key)
+        {
+
+            string[] data = { str, key };
+
+            string output = "";
+
+            if (mode.Key == ConsoleKey.E)
+            {
+                Encryption e = new Encryption(data);
+                output = e.GetOutput();
+
+                Util.Copy(output, true);
             } else
             {
-                new Decryption(str, key);
+                Decryption d =  new Decryption(data);
+                output = d.GetOutput();
+
+                Console.WriteLine(output);
+
+                Console.Write("\nWould you like to Copy? (y/n): ");
+                if (Console.ReadKey().Key == ConsoleKey.Y)
+                {
+                    Util.Copy(output);
+                }
             }
-            
         }
     }
 }

@@ -9,6 +9,7 @@ namespace _3_Layer_Encryptor
 {
     internal class Program
     {
+        [STAThread]
         static void Main(string[] args)
         {
             // Increase Console.ReadLine() limit
@@ -18,9 +19,9 @@ namespace _3_Layer_Encryptor
 
 
             Console.Write("Encryption or Decryption (e/d): ");
-            string mode = Console.ReadLine();
+            ConsoleKeyInfo mode = Console.ReadKey();
 
-            Console.Write("Text: ");
+            Console.Write("\nText: ");
             string text = Console.ReadLine();
 
             Console.Write("Key: ");

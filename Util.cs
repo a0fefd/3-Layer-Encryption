@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.XPath;
 
 namespace _3_Layer_Encryptor
@@ -76,6 +77,15 @@ namespace _3_Layer_Encryptor
         {
             Console.Write("\nPress Enter to continue...");
             Console.Read();
+        }
+        public static void Copy(string output, bool inform = false)
+        {
+            if (inform)
+            {
+                Console.WriteLine(output + "\n\nCopied to Clipboard");
+            }
+
+            Clipboard.SetText(output);
         }
     }
 }
