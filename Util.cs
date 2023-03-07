@@ -8,7 +8,7 @@ using System.Xml.XPath;
 
 namespace _3_Layer_Encryptor
 {
-    internal class Util
+    public class Util
     {
         private static Byte[] ConvertToByteArray(string str, Encoding encoding)
         {
