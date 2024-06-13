@@ -9,27 +9,42 @@ namespace _3_Layer_Encryptor
 {
     internal class Program
     {
+        static readonly long buffer = (long)Math.Pow(2, 16);
         [STAThread]
         static void Main(string[] args)
         {
+            Console.Clear();
+
             // Increase Console.ReadLine() limit
-            byte[] inputBuffer = new byte[1024];
+            byte[] inputBuffer = new byte[buffer];
             Stream inputStream = Console.OpenStandardInput(inputBuffer.Length);
             Console.SetIn(new StreamReader(inputStream, Console.InputEncoding, false, inputBuffer.Length));
+            
+            ConsoleKeyInfo mode;
+            string text;
+            string key;
 
+            for (int i = 0; i < 1000; i++) {
+                Console.Write("Encryption or Decryption (e/d) [CTRL+C to exit]: ");
+                mode = Console.ReadKey();
 
-            Console.Write("Encryption or Decryption (e/d): ");
-            ConsoleKeyInfo mode = Console.ReadKey();
+                Console.Write("\nText: ");
+                if (i > 0) {
+                    Console.ReadLine();
+                }
+                text = Console.ReadLine();
 
-            Console.Write("\nText: ");
-            string text = Console.ReadLine();
+                Console.Write("Key: ");
+                key = Console.ReadLine();
 
-            Console.Write("Key: ");
-            string key = Console.ReadLine();
+                Console.WriteLine(" ");
+                Console.WriteLine("## Output ##");
 
-            new Process(text, mode, key);
+                new Process(text, mode, key);
 
-            Util.Pause();
+                Util.Pause();
+                Console.Clear();
+            }
         }
     }
 }

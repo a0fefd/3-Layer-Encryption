@@ -31,7 +31,7 @@ namespace _3_Layer_Encryptor
             }
             public Encryption(string[] data)
             {
-                this.output = Stage3(
+                output = Stage3(
                     Stage2(
                         Stage1(data[0], data[1])
                     )
@@ -85,8 +85,7 @@ namespace _3_Layer_Encryptor
                 output = e.GetOutput();
 
                 Util.Copy(output, true);
-            } else
-            {
+            } else {
                 Decryption d =  new Decryption(data);
                 output = d.GetOutput();
 

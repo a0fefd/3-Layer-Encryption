@@ -30,13 +30,21 @@ namespace _3_Layer_Encryptor
         public static String Base64Encode(string str)
         {
             return Convert.ToBase64String(
-                Encoding.UTF7.GetBytes(str)
+                Encoding.UTF32.GetBytes(
+                    Convert.ToBase64String(
+                        Encoding.UTF7.GetBytes(str)
+                    )
+                )
             );
         }
         public static String Base64Decode(string str)
         { 
             return Encoding.UTF7.GetString(
-                Convert.FromBase64String(str)
+                Convert.FromBase64String(
+                    Encoding.UTF32.GetString(
+                        Convert.FromBase64String(str)
+                    )
+                )
             );
         }
         public static String StringToBinary(string str)
