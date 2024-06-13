@@ -23,6 +23,10 @@ namespace _3_Layer_Encryptor
             ConsoleKeyInfo mode;
             string text;
             string key;
+            
+            Console.Write("Session Key: ");
+            key = Console.ReadLine();
+            Console.Clear();
 
             for (int i = 0; i < 1000; i++) {
                 Console.Write("Encryption or Decryption (e/d) [CTRL+C to exit]: ");
@@ -33,9 +37,6 @@ namespace _3_Layer_Encryptor
                     Console.ReadLine();
                 }
                 text = Console.ReadLine();
-
-                Console.Write("Key: ");
-                key = Console.ReadLine();
 
                 Console.WriteLine(" ");
                 Console.WriteLine("## Output ##");

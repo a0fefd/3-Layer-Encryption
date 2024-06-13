@@ -9,6 +9,7 @@
     <RootNamespace>_3_Layer_Encryptor</RootNamespace>
     <AssemblyName>3 Layer Encryptor</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>

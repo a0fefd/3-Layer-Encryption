@@ -13,3 +13,9 @@ D:\nbigi0\My Documents\GitHub\3-Layer-Encryption\obj\Debug\3 Layer Encryptor.csp
 D:\nbigi0\My Documents\GitHub\3-Layer-Encryption\obj\Debug\3 Layer Encryptor.csproj.CoreCompileInputs.cache
 D:\nbigi0\My Documents\GitHub\3-Layer-Encryption\obj\Debug\3 Layer Encryptor.exe
 D:\nbigi0\My Documents\GitHub\3-Layer-Encryption\obj\Debug\3 Layer Encryptor.pdb
+D:\nbigi0\My Documents\GitHub\3-Layer-Encryption\4 Layer SHORTENED\3 Layer Encryptor.exe.config
+D:\nbigi0\My Documents\GitHub\3-Layer-Encryption\4 Layer SHORTENED\3 Layer Encryptor.exe
+D:\nbigi0\My Documents\GitHub\3-Layer-Encryption\4 Layer SHORTENED\3 Layer Encryptor.pdb
+D:\nbigi0\My Documents\GitHub\3-Layer-Encryption\4 Layer SHORT+SESSIONKEY\3 Layer Encryptor.exe.config
+D:\nbigi0\My Documents\GitHub\3-Layer-Encryption\4 Layer SHORT+SESSIONKEY\3 Layer Encryptor.exe
+D:\nbigi0\My Documents\GitHub\3-Layer-Encryption\4 Layer SHORT+SESSIONKEY\3 Layer Encryptor.pdb

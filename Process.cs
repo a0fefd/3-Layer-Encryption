@@ -23,7 +23,7 @@ namespace _3_Layer_Encryptor
             }
             private static string Stage2(string str)
             {
-                return Util.StringToBinary(str);
+                return Util.StringToHex(str);
             }
             private static string Stage3(string str)
             {
@@ -52,7 +52,7 @@ namespace _3_Layer_Encryptor
             }
             private static string Stage2(string str)
             {
-                return Util.BinaryToString(str);
+                return Util.HexToString(str);
             }
             private static string Stage3(string str, string key)
             {
@@ -91,7 +91,7 @@ namespace _3_Layer_Encryptor
 
                 Console.WriteLine(output);
 
-                Console.Write("\nWould you like to Copy? (y/n): ");
+                Console.Write("\nWould you like to Copy? (y|N): ");
                 if (Console.ReadKey().Key == ConsoleKey.Y)
                 {
                     Util.Copy(output);
